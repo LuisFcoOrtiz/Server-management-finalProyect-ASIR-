@@ -20,8 +20,7 @@
 		//menu de navegacion
          	include "clases/Navbar.php";
          	$navBar = new Header;
-         	$navBar->crearHeader();
-          echo = $manuelillo;
+         	$navBar->crearHeader();          
 	?>
 
         <div class="container">
