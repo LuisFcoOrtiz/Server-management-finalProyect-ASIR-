@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-oct-2014, 10:26:08
+    Author     : Casa
+*/
+
+#escribirNumero {
+    display: none;
+    font-size: 0.9em;
+}
+
+/* boton de informacion de usuario */
+#button {
+	width: 20%;
+	height: 20%;
+}
+
+#logoutUsuario{ /*logout de usuario*/
+	width: 60%;
+	height: 60%;
+}
+
+/*Footer al final de la web*/
+#footerNav {
+	background-color: #EEFAFA;
+}
+
+#copyRight {
+	text-align: center;
+	font: bold 80% monospace; 
+}
