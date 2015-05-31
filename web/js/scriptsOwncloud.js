@@ -32,7 +32,7 @@ $(document).ready( function() {
         imprimirLog();
     });
 
-    function imprimirLog() {        
+    function imprimirLog() {
         $.ajax({
             type: "GET",
             url: "Servidor",
