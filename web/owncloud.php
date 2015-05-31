@@ -21,6 +21,7 @@
          	include "clases/Navbar.php";
          	$navBar = new Header;
          	$navBar->crearHeader();
+          echo = $manuelillo;
 	?>
 
         <div class="container">
