@@ -29,19 +29,19 @@ $(document).ready( function() {
 
     /*al hacer clic en (botonImprimirLogOwncloud) inicia la funcion para hacer un PDF en JAVA de los log de owncloud*/
     $("#botonImprimirLogOwncloud").click(function() {
-        imprimirLog();
-    });
+        function imprimirLog() {                
+            $.ajax({
+                type: "GET",
+                url: "Servidor",
+                data: 'op=2', //La operacion 2 realiza un PDF con los Log del sistema
+                success: function(msg) {
+                    $("#resultado").html(msg);
+                }
+            });
+        }
+    }); //Fin de imprimir log
 
-    function imprimirLog() {        
-        $.ajax({
-            type: "GET",
-            url: "Servidor",
-            data: 'op=2', //La operacion 2 realiza un PDF con los Log del sistema
-            success: function(msg) {
-                $("#resultado").html(msg);
-            }
-        });
-    }
+    
 
     /*Al hacer clic en el boton (botonRealizarBackup) empieza una barra de proceso para ver cuando termina la copia de seguridad*/
     $("#botonRealizarBackup").click(function() {
