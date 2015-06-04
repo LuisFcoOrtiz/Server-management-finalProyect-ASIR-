@@ -28,18 +28,18 @@ $(document).ready( function() {
     });  
 
     /*al hacer clic en (botonImprimirLogOwncloud) inicia la funcion para hacer un PDF en JAVA de los log de owncloud*/
-    $("#botonImprimirLogOwncloud").click(function() {
-        function imprimirLog() {                
-            $.ajax({
-                type: "GET",
-                url: "Servidor",
-                data: 'op=2', //La operacion 2 realiza un PDF con los Log del sistema
-                success: function(msg) {
-                    $("#resultado").html(msg);
-                }
-            });
-        }
-    }); //Fin de imprimir log
+    $(function() {
+        $("#botonImprimirLogOwncloud").click(function() {
+            $.ajax({ //Ejecuta la clase en java para imprimir log
+                        type: "GET",
+                        url: "Servidor",
+                        data: 'op=3', //La operación 3 ejecuta un script para hacer un backup de owncloud
+                        success: function(msge) {
+                            $("#resultado").html(msge);
+                        }
+                    });
+        }); //Fin de imprimir log
+    });
 
     
 

@@ -18,7 +18,7 @@ $(document).ready( function() {
         });
     }
     /*cada 3 segundos se ejecuta la funcion estado */
-    setInterval(estado, 3000);  
+    ///////setInterval(estado, 3000);  
 
     /*Funcion para ver el usuario actual*/
     $(function() {
@@ -38,7 +38,17 @@ $(document).ready( function() {
             $( "#usuarioActual" ).dialog( "open" );
         });
         
-        $( "#botonInfoUsuario" ).click(function() {            
+    });//fin de ver el usuario actual conectado
+
+    /*menu con pestañas en la pagina de administracion */
+    $(function() {
+        $( "#tabsAdmin" ).tabs();
+    });
+    
+    //***FUNCIONES PARA LOS BOTONES DEL PANEL DE ADMINISTRACION***//
+    
+    /*Funcion para reiniciar owncloud*/
+    $( "#botonReiniciarOwncloud" ).click(function() {            
             $.ajax({ //Ejecuta la clase en java para imprimir log
                     type: "GET",
                     url: "Servidor",
@@ -47,15 +57,34 @@ $(document).ready( function() {
                         $("#resultado").html(msge);
                     }
                 });
-        });
-        
-      });//fin de ver el usuario actual conectado
-
-    /*menu con pestañas en la pagina de administracion */
-    $(function() {
-        $( "#tabsAdmin" ).tabs();
-    });
-
+    }); //Fin de funcion para reiniciar owncloud
+    
+    /*Funcion para parar owncloud*/
+    $( "#botonPararOwncloud" ).click(function() {            
+            $.ajax({ //Ejecuta la clase en java para imprimir log
+                    type: "GET",
+                    url: "Servidor",
+                    data: 'op=3', //La operación 3 ejecuta un script para hacer un backup de owncloud
+                    success: function(msge) {
+                        $("#resultado").html(msge);
+                    }
+                });
+    }); //Fin de funcion para parar owncloud
+    
+    /*Funcion para arrancar owncloud*/
+    $( "#botonIniciarOwncloud" ).click(function() {            
+            $.ajax({ //Ejecuta la clase en java para imprimir log
+                    type: "GET",
+                    url: "Servidor",
+                    data: 'op=3', //La operación 3 ejecuta un script para hacer un backup de owncloud
+                    success: function(msge) {
+                        $("#resultado").html(msge);
+                    }
+                });
+    }); //Fin de funcion para arrancar owncloud
+    
+    //***FINAL DE FUNCIONES BOTONES DE ADMINISTRACION***//
+    
 }); //Fin de document.ready
 
 /*La funcion estado cada 3 segundos envia una peticion para conocer el estado de los servidores*/
@@ -69,15 +98,3 @@ function estado() {
             }
         });
     }
-
-function prueba() {     
-    $.ajax({ //Ejecuta la clase en java para imprimir log
-                    type: "GET",
-                    url: "Servidor",
-                    data: 'op=3', //La operación 3 ejecuta un script para hacer un backup de owncloud
-                    success: function(msg) {
-                        $("#resultado").html(msg);
-                    }
-                });
-
-}
