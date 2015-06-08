@@ -21,7 +21,15 @@ public class Operacion1 extends Operacion{
     public void operacion(HttpServletResponse response) {
         //String status="running.";
         try (PrintWriter out = response.getWriter()){
-            out.write("<link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">");            
+            out.write("<link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">"
+                    + "<div class='container'>"
+                        + "<div class='text-center'>"
+                            + "<table class='table'>"
+                                + "<tr class='active'>"
+                                    + "<td>Servicio</td>"
+                                    + "<td>Estado</td>"
+                                + "</tr>"
+                                + "<tr class='active'>");            
             Runtime runtime = Runtime.getRuntime();
             Process process = runtime.exec("/opt/script/owncloud/statusOwncloud");
             process.waitFor();
@@ -30,18 +38,18 @@ public class Operacion1 extends Operacion{
             while ((linea = buffer.readLine()) != null) {
                 
                 if (linea.endsWith("running")){
-                    out.write("<div class=\"main row\">"
-                                + "<div class=\"col-xs-12 col-sm-8 col-md-9>"
-                                    + "<div class=\"container\" >"
-                                    + "Esto esta funcionando"
-                                    + "<img class='img-rounded' src='images/encendido.png' height='42' width='42'>"
-                                    + "</div>"
-                                + "</div>");
-                out.write("</div>");
-                out.write(linea);
+                    out.write("<td><img class='img-rounded' src='images/owncloud.png' height='55' width='60'></td>"
+                             + "<td><img class='img-rounded' src='images/encendido.png' height='42' width='42'></td>");
+                    out.write(linea);
+                } else {
+                    out.write("<td><img class='img-rounded' src='images/owncloud.png' height='55' width='60'></td>"
+                             + "<td><img class='img-rounded' src='images/apagado.png' height='42' width='42'></td>");
                 }
                 
-            }
+            } //final de bucle while
+            out.write(  "</tr>"
+                    + "</div>"
+                    + "</div>");// cierres de Div conainer y text-center
         } catch (IOException | InterruptedException ex) {
             System.out.print(ex);
         }
