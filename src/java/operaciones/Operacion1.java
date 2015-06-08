@@ -5,6 +5,10 @@
  */
 package operaciones;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -12,10 +16,35 @@ import javax.servlet.http.HttpServletResponse;
  * @author LFOM
  */
 public class Operacion1 extends Operacion{
-
+    //OPERACION PARA VER EL ESTADO DEL SERVICIO DE OWNCLOUD 
     @Override
     public void operacion(HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //String status="running.";
+        try (PrintWriter out = response.getWriter()){
+            out.write("<link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">");            
+            Runtime runtime = Runtime.getRuntime();
+            Process process = runtime.exec("/opt/script/owncloud/statusOwncloud");
+            process.waitFor();
+            BufferedReader buffer = new BufferedReader (new InputStreamReader(process.getInputStream()));
+            String linea;
+            while ((linea = buffer.readLine()) != null) {
+                
+                if (linea.endsWith("running")){
+                    out.write("<div class=\"main row\">"
+                                + "<div class=\"col-xs-12 col-sm-8 col-md-9>"
+                                    + "<div class=\"container\" >"
+                                    + "Esto esta funcionando"
+                                    + "<img class='img-rounded' src='images/encendido.png' height='42' width='42'>"
+                                    + "</div>"
+                                + "</div>");
+                out.write("</div>");
+                out.write(linea);
+                }
+                
+            }
+        } catch (IOException | InterruptedException ex) {
+            System.out.print(ex);
+        }
     }
     
 }

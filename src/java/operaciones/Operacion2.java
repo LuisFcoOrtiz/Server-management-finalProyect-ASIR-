@@ -18,12 +18,12 @@ import javax.servlet.http.HttpServletResponse;
  * @author LFOM
  */
 public class Operacion2 extends Operacion {
-
+    //OPERACION PARA DETENER EL SERVICIO DE OWNCLOUD
     @Override
     public void operacion(HttpServletResponse response) {
         try (PrintWriter out = response.getWriter()){            
             Runtime runtime = Runtime.getRuntime();
-            Process process = runtime.exec("/opt/script/stopOwncloud");
+            Process process = runtime.exec("/opt/script/owncloud/stopOwncloud");
             process.waitFor();
             BufferedReader buffer = new BufferedReader (new InputStreamReader(process.getInputStream()));
             String linea;            

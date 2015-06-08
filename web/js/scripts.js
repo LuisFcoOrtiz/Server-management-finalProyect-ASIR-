@@ -49,7 +49,7 @@ $(document).ready( function() {
     
     /*Funcion para reiniciar owncloud*/
     $( "#botonReiniciarOwncloud" ).click(function() {            
-            $.ajax({ //Ejecuta la clase en java para imprimir log
+            $.ajax({ 
                     type: "GET",
                     url: "Servidor",
                     data: 'op=3', //La operación 3 ejecuta un script para hacer un backup de owncloud
@@ -61,7 +61,7 @@ $(document).ready( function() {
     
     /*Funcion para parar owncloud*/
     $( "#botonPararOwncloud" ).click(function() {            
-            $.ajax({ //Ejecuta la clase en java para imprimir log
+            $.ajax({ 
                     type: "GET",
                     url: "Servidor",
                     data: 'op=2', //La operación 3 ejecuta un script para hacer un backup de owncloud
@@ -73,10 +73,10 @@ $(document).ready( function() {
     
     /*Funcion para arrancar owncloud*/
     $( "#botonIniciarOwncloud" ).click(function() {            
-            $.ajax({ //Ejecuta la clase en java para imprimir log
+            $.ajax({
                     type: "GET",
                     url: "Servidor",
-                    data: 'op=3', //La operación 3 ejecuta un script para hacer un backup de owncloud
+                    data: 'op=4', //La operación 3 ejecuta un script para hacer un backup de owncloud
                     success: function(msge) {
                         $("#resultado").html(msge);
                     }
@@ -92,7 +92,7 @@ function estado() {
         $.ajax({
             type: "GET",
             url: "Servidor",
-            data: 'op=4', //La operación 4 ejecuta un script para los servidores
+            data: 'op=1', //La operación 1 ejecuta un script para ver los estados de servidores
             success: function(msg) {
                 $("#resultado").html(msg);
             }
