@@ -5,7 +5,9 @@
  */
 package operaciones;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,11 +21,14 @@ public class Operacion2 extends Operacion {
 
     @Override
     public void operacion(HttpServletResponse response) {
-        try {
-            PrintWriter out = response.getWriter();
-            out.write("vengaa yaaa compaaae");
-        } catch (IOException ex) {
-            Logger.getLogger(Operacion2.class.getName()).log(Level.SEVERE, null, ex);
+        try (PrintWriter out = response.getWriter()){            
+            Runtime runtime = Runtime.getRuntime();
+            Process process = runtime.exec("/opt/script/stopOwncloud");
+            process.waitFor();
+            BufferedReader buffer = new BufferedReader (new InputStreamReader(process.getInputStream()));
+            String linea;            
+        } catch (IOException | InterruptedException ex) {
+            System.out.print(ex);
         }
     }
     

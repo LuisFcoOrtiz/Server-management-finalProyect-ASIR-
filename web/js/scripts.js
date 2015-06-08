@@ -18,7 +18,7 @@ $(document).ready( function() {
         });
     }
     /*cada 3 segundos se ejecuta la funcion estado */
-    ///////setInterval(estado, 3000);  
+    setInterval(estado, 3000);  
 
     /*Funcion para ver el usuario actual*/
     $(function() {
@@ -64,7 +64,7 @@ $(document).ready( function() {
             $.ajax({ //Ejecuta la clase en java para imprimir log
                     type: "GET",
                     url: "Servidor",
-                    data: 'op=3', //La operación 3 ejecuta un script para hacer un backup de owncloud
+                    data: 'op=2', //La operación 3 ejecuta un script para hacer un backup de owncloud
                     success: function(msge) {
                         $("#resultado").html(msge);
                     }

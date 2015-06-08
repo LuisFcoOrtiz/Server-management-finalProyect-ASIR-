@@ -25,13 +25,13 @@ public class Operacion4 extends Operacion {
         try (PrintWriter out = response.getWriter()){
             out.write("<link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">");            
             Runtime runtime = Runtime.getRuntime();
-            Process process = runtime.exec("/opt/script/ssh");
+            Process process = runtime.exec("/opt/script/statusOwncloud");
             process.waitFor();
             BufferedReader buffer = new BufferedReader (new InputStreamReader(process.getInputStream()));
             String linea;
             while ((linea = buffer.readLine()) != null) {
                 
-                if (linea.endsWith("running.")){
+                if (linea.endsWith("running")){
                     out.write("<div class=\"main row\">"
                                 + "<div class=\"col-xs-12 col-sm-8 col-md-9>"
                                     + "<div class=\"container\" >"
