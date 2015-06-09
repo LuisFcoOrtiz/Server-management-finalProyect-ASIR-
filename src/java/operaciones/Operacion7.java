@@ -15,13 +15,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author LFOM
  */
-public class Operacion5 extends Operacion{
+public class Operacion7 extends Operacion{
 
     @Override
     public void operacion(HttpServletResponse response) {
         try (PrintWriter out = response.getWriter()){            
             Runtime runtime = Runtime.getRuntime();
-            Process process = runtime.exec("/opt/script/thinclient/restartThinclient");
+            Process process = runtime.exec("/opt/script/thinclient/startThinclient");
             process.waitFor();
             BufferedReader buffer = new BufferedReader (new InputStreamReader(process.getInputStream()));
             String linea;            

@@ -24,12 +24,3 @@ and open the template in the editor.
 	height: 60%;
 }
 
-/*Footer al final de la web*/
-#footerNav {
-	background-color: #EEFAFA;
-}
-
-#copyRight {
-	text-align: center;
-	font: bold 80% monospace; 
-}

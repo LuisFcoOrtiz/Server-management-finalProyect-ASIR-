@@ -47,6 +47,7 @@ $(document).ready( function() {
     
     //***FUNCIONES PARA LOS BOTONES DEL PANEL DE ADMINISTRACION***//
     
+    //BOTONES OWNCLOUD
     /*Funcion para reiniciar owncloud*/
     $( "#botonReiniciarOwncloud" ).click(function() {            
             $.ajax({ 
@@ -83,6 +84,42 @@ $(document).ready( function() {
                 });
     }); //Fin de funcion para arrancar owncloud
     
+    //BOTONES OPENTHINCLIEN
+    /*Funcion para reiniciar OPENTHINCLIENT*/
+    $( "#botonReiniciarThinClient" ).click(function() {            
+            $.ajax({ 
+                    type: "GET",
+                    url: "Servidor",
+                    data: 'op=5', 
+                    success: function(msge) {
+                        $("#resultado").html(msge);
+                    }
+                });
+    }); //Fin de funcion para reiniciar OPENTHINCLIENT
+    
+    /*Funcion para parar OPENTHINCLIENT*/
+    $( "#botonPararThinClient" ).click(function() {            
+            $.ajax({ 
+                    type: "GET",
+                    url: "Servidor",
+                    data: 'op=6', 
+                    success: function(msge) {
+                        $("#resultado").html(msge);
+                    }
+                });
+    }); //Fin de funcion para parar OPENTHINCLIENT
+    
+    /*Funcion para arrancar OPENTHINCLIENT*/
+    $( "#botonIniciarThinClient" ).click(function() {            
+            $.ajax({
+                    type: "GET",
+                    url: "Servidor",
+                    data: 'op=7', 
+                    success: function(msge) {
+                        $("#resultado").html(msge);
+                    }
+                });
+    }); //Fin de funcion para arrancar OPENTHINCLIENT
     //***FINAL DE FUNCIONES BOTONES DE ADMINISTRACION***//
     
 }); //Fin de document.ready

@@ -135,12 +135,7 @@ and open the template in the editor.
 
 	            </div> <!-- fin de columnas derecha -->
 
-	        </div> <!--Fin de la fila principal--> 
-			
-			<!--footer al final de la web--> 
-			<footer>
-	        	<div id="footerNav"> <p id="copyRight"> Proyecto final ASIR </p> </div>
-	        </footer>
+	        </div> <!--Fin de la fila principal--> 			
 
         </div>
         <!--Fin de Contenedor -->
