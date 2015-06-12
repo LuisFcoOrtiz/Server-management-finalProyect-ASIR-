@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author LFOM
  */
 public class Operacion7 extends Operacion{
-
+    //OPERACION PARA INICIAR EL SERVICIO DE OPENTHINCLIENT
     @Override
     public void operacion(HttpServletResponse response) {
         try (PrintWriter out = response.getWriter()){            

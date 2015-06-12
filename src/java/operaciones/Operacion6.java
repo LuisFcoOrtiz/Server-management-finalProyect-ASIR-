@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author LFOM
  */
 public class Operacion6 extends Operacion{
-    
+    //OPERACION PARA DETENER EL SERVICIO DE OPENTHINCLIENT
     @Override
     public void operacion(HttpServletResponse response) {
         try (PrintWriter out = response.getWriter()){            

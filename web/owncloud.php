@@ -67,7 +67,7 @@
               </div>
               <!--seleccion de opciones administracion owncloud-->                               
               <ul class="list-group">
-                <li class="list-group-item"><button id="botonImprimirLogOwncloud" class="glyphicon glyphicon-print">  Informe Owncloud  </li>
+                <li class="list-group-item"><a href="http://192.168.1.150:8080/FinalProyect/Informes" role="button" target="_blank"><button id="botonImprimirLogOwncloud" class="glyphicon glyphicon-print">  Informe Owncloud  </a></li>
                 <li class="list-group-item"><button id="botonNuevoUsuarioOwncloud" class="glyphicon glyphicon-plus">  Nuevo usuario</li>
                 <li class="list-group-item"><button id="botonCapacidadOwncloud" class="glyphicon glyphicon-hdd">  Capacidad HDD</li>
                 <li class="list-group-item"><button id="botonRealizarBackup" class="glyphicon glyphicon-floppy-disk">  Realizar backup</li>

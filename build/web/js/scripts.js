@@ -17,8 +17,8 @@ $(document).ready( function() {
             }
         });
     }
-    /*cada 3 segundos se ejecuta la funcion estado */
-    setInterval(estado, 3000);  
+    /*cada 3 segundos se ejecuta la funcion estado que esta al final del script*/
+    setInterval(estado, 3000);    
 
     /*Funcion para ver el usuario actual*/
     $(function() {
@@ -130,6 +130,17 @@ function estado() {
             type: "GET",
             url: "Servidor",
             data: 'op=1', //La operación 1 ejecuta un script para ver los estados de servidores
+            success: function(msg) {
+                $("#resultado").html(msg);
+            }
+        });
+    }
+    
+    function prueba() {        
+        $.ajax({
+            type: "GET",
+            url: "Servidor",
+            data: 'op=8', //La operación 1 ejecuta un script para ver los estados de servidores
             success: function(msg) {
                 $("#resultado").html(msg);
             }

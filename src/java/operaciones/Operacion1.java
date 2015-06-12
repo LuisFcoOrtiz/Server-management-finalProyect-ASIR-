@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author LFOM
  */
 public class Operacion1 extends Operacion{
-    //OPERACION PARA VER EL ESTADO DEL SERVICIO DE OWNCLOUD 
+    //OPERACION PARA VER EL ESTADO DEL SERVICIO DE OWNCLOUD Y OPENTHINCLIEN
     @Override
     public void operacion(HttpServletResponse response) {
         //String status="running.";
@@ -39,7 +39,7 @@ public class Operacion1 extends Operacion{
             String linea;
             //EJECUCION DEL SCRIPT DE ESTADO DE OPENTHINCLIENT
             Runtime runtimeThin = Runtime.getRuntime();
-            Process processThin = runtime.exec("/opt/script/thinclient/statusThinclient");
+            Process processThin = runtimeThin.exec("/opt/script/thinclient/statusThinclient");
             processThin.waitFor();
             BufferedReader bufferThin = new BufferedReader (new InputStreamReader(processThin.getInputStream()));
             String lineaThin;
@@ -56,9 +56,9 @@ public class Operacion1 extends Operacion{
                 else {
                     out.write("<td><img class='img-rounded' src='images/owncloud.png' height='55' width='60'></td>"
                              + "<td><img class='img-rounded' src='images/apagado.png' height='42' width='42'></td>");
-                }                
+                } 
             } //final de bucle while
-            out.write(  "</tr>");
+            out.write("</tr>");
             out.write("</div>"
                     + "</div>");// cierres de Div conainer y text-center
         } catch (IOException | InterruptedException ex) {
