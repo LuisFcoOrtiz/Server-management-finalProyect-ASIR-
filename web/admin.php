@@ -112,21 +112,21 @@ and open the template in the editor.
 			            </tr>
 						<tr class="info">
 							<td>Servicio</td>
-							<td>Estado</td>
+							<td></td>
 							<td>Reiniciar</td>
 							<td>Parar</td>
 							<td>Iniciar</td>
 						</tr>
 						<tr>
 							<td>Owncloud</td>
-							<td>parado</td>
+							<td></td>
 							<td><button id="botonReiniciarOwncloud" class="glyphicon glyphicon-refresh"></button></td>
 							<td><button id="botonPararOwncloud" class="glyphicon glyphicon-pause"></button></td>
 							<td><button id="botonIniciarOwncloud" class="glyphicon glyphicon-play"></button></td>
 						</tr>
 						<tr>
 							<td>Thinclient</td>
-							<td>funcionando</td>
+							<td></td>
 							<td><button id="botonReiniciarThinClient" class="glyphicon glyphicon-refresh"></button></td>
 							<td><button id="botonPararThinClient" class="glyphicon glyphicon-pause"></button></td>
 							<td><button id="botonIniciarThinClient" class="glyphicon glyphicon-play"></button></td>

@@ -1,4 +1,9 @@
 .<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
 <head>
 	<meta charset="utf-8">
@@ -35,7 +40,7 @@
               <div id="menuUsuariosOwncloud">
                       <h3>Usuario 1</h3>
                 <div>
-                  <p>Datos del usuario 1</p>
+                  <p>Datos usuario 1 sin nada aun</p>
                 </div>
                 <h3>Usuario 2</h3>
                 <div>
@@ -56,8 +61,7 @@
                 </div>
               </div><!--fin de menu desplegable de usuarios owncloud-->
 
-            </div> <!--fin de columna de la izquierda--> 
-
+            </div> <!--fin de columna de la izquierda-->             
             <!--panel administracion derecha owncloud admin-->
             <div class="col-xs-12 col-sm-4 col-md-3">
               <img src="images/owncloud.png" class="img-responsive" alt="Responsive image">
@@ -69,7 +73,7 @@
               <ul class="list-group">
                 <li class="list-group-item"><a href="http://192.168.1.150:8080/FinalProyect/Informes" role="button" target="_blank"><button id="botonImprimirLogOwncloud" class="glyphicon glyphicon-print">  Informe Owncloud  </a></li>
                 <li class="list-group-item"><button id="botonNuevoUsuarioOwncloud" class="glyphicon glyphicon-plus">  Nuevo usuario</li>
-                <li class="list-group-item"><button id="botonCapacidadOwncloud" class="glyphicon glyphicon-hdd">  Capacidad HDD</li>
+                <li class="list-group-item"><button id="botonCapacidadOwncloud" class="glyphicon glyphicon-hdd">Capacidad HDD</li>
                 <li class="list-group-item"><button id="botonRealizarBackup" class="glyphicon glyphicon-floppy-disk">  Realizar backup</li>
                 <li class="list-group-item"><a class="glyphicon glyphicon-cloud" href="http://192.168.1.100/owncloud/" role="button" target="_blank"> Owncloud</a></li>
               </ul>
@@ -104,5 +108,6 @@
 
                 </div><!-- fin de segunda fila-->
         </div>
+        <div id="resultado"></div> <!-- muestra los resultados de los script de scriptsOwncloud-->
 </body>
 </html>

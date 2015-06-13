@@ -5,11 +5,13 @@
  */
 package operaciones;
 
+import email.Email;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,19 +45,26 @@ public class Operacion1 extends Operacion{
             processThin.waitFor();
             BufferedReader bufferThin = new BufferedReader (new InputStreamReader(processThin.getInputStream()));
             String lineaThin;
+            //CORREO ELECTRONICO PARA AVISAR AL ADMINISTRADOR
+            String clave = "saludosalsevi"; //Contraseña de gmail para enviar correo 
+            Email email = new Email("levantateomr@gmail.com",clave,"luis.fco.om@gmail.com","ALERTA Servicio no activo","El servidor cayo de forma inesperada, requiere de supervision inmediata del administrador");
+            //Email e = new Email("levantateomr@gmail.com",clave,"C:\\uno.jpg","adjunto.jpg","sanlegas@yopmail.com","Adjunto","Prueba del tutorial para mandar un email");
+            
             // COMIENZA EL BUCLE
-            /*MODIFICAR USANDO SWITCH*/
-            while ((linea = buffer.readLine()) != null && (lineaThin = bufferThin.readLine()) != null ) {                
+            while ((linea = buffer.readLine()) != null) {                
                 if (linea.endsWith("running")){
                     out.write("<td><img class='img-rounded' src='images/owncloud.png' height='55' width='60'></td>"
                              + "<td><img class='img-rounded' src='images/encendido.png' height='42' width='42'></td>");
-                } else if(lineaThin.endsWith("running")) {
-                    out.write("<tr><td><img class='img-rounded' src='images/thinclient.png' height='55' width='60'></td>"
-                             + "<td><img class='img-rounded' src='images/encendido.png' height='42' width='42'></td></tr>");
                 }
                 else {
                     out.write("<td><img class='img-rounded' src='images/owncloud.png' height='55' width='60'></td>"
-                             + "<td><img class='img-rounded' src='images/apagado.png' height='42' width='42'></td>");
+                             + "<td><img class='img-rounded' src='images/apagado.png' height='42' width='42'></td>");                                                           
+                    
+                    if (email.sendMail()){                        
+                            out.write("<p class='bg-info'>Se envió un correo al administrador del sistema avisando de la caida del servicio</p>");
+                        }else{                        
+                            out.write("<p class='bg-warning'>No se pudo enviar un correo al administrador</p>");
+                        }                    
                 } 
             } //final de bucle while
             out.write("</tr>");

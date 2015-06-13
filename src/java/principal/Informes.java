@@ -41,6 +41,7 @@ public class Informes extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, DocumentException, InterruptedException {
+            // SERVLET PARA LA IMPRESIÓN DE LOS REGISTROS DE SISTEMA
             try {
             // Ejecucion de comando que sera introducido en el pdf
             Runtime runtime = Runtime.getRuntime();

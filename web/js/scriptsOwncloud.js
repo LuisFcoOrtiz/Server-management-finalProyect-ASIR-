@@ -25,38 +25,26 @@ $(document).ready( function() {
         $( "#botonNuevoUsuarioOwncloud" ).click(function() {
             $( "#formularioNuevoUsuario" ).dialog( "open" );
         });
-    });  
+    });    
 
-    /*al hacer clic en (botonImprimirLogOwncloud) inicia la funcion para hacer un PDF en JAVA de los log de owncloud*/
-    $(function() {
-        $("#botonImprimirLogOwncloud").click(function() {
-            $.ajax({ //Ejecuta la clase en java para imprimir log
-                        type: "GET",
-                        url: "Servidor",
-                        data: 'op=3', //La operación 3 ejecuta un script para hacer un backup de owncloud
-                        success: function(msge) {
-                            $("#resultado").html(msge);
-                        }
-                    });
-        }); //Fin de imprimir log
-    });
-
-    
-
+    /*Funcion para parar owncloud*/
+    $( "#botonCapacidadOwncloud" ).click(function() {            
+            //falta por rellenar con funcion
+    }); //Fin de funcion para parar owncloud
+        
     /*Al hacer clic en el boton (botonRealizarBackup) empieza una barra de proceso para ver cuando termina la copia de seguridad*/
     $("#botonRealizarBackup").click(function() {
-    	
-        $(function() { //Inicio del processbar
-                var progressbar = $( "#progressBarBackup" ),
-                progressLabel = $( ".progress-label" );                
-                $.ajax({ //Ejecuta la clase en java para imprimir log
+      $.ajax({ 
                     type: "GET",
                     url: "Servidor",
-                    data: 'op=3', //La operación 3 ejecuta un script para hacer un backup de owncloud
-                    success: function(msg) {
-                        $("#resultado").html(msg);
+                    data: 'op=8', //La operación 8 ejecuta script para backup
+                    success: function(msge) {
+                        $("#resultado").html(msge);
                     }
-                });
+                });    	
+        $(function() { //Inicio del processbar
+                var progressbar = $( "#progressBarBackup" ),
+                progressLabel = $( ".progress-label" );                                
                 progressbar.progressbar({
                   value: false,
                   change: function() {
@@ -77,20 +65,8 @@ $(document).ready( function() {
                   }
                 }	 		   
 
-                setTimeout( progress, 3000 ); //cantidad de tiempo que tardara la barra de procesar
+                setTimeout( progress, 4000 ); //cantidad de tiempo que tardara la barra de procesar
             });
-	}); //Fin de la funcion al apretar el boton (botonRealizarBackup)
+    }); //Fin de la funcion al apretar el boton (botonRealizarBackup)
 
 }); //Fin de document.ready
-
-$(function backup() {
-            $.ajax({ //Ejecuta la clase en java para imprimir log
-                type: "GET",
-                url: "Servidor",
-                data: 'op=3', //La operación 3 ejecuta un script para hacer un backup de owncloud
-                success: function(msg) {
-                    $("#resultado").html(msg);
-                }
-
-            });
-        });
