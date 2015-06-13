@@ -25,12 +25,19 @@ $(document).ready( function() {
         $( "#botonNuevoUsuarioOwncloud" ).click(function() {
             $( "#formularioNuevoUsuario" ).dialog( "open" );
         });
-    });    
+    }); //Fin de funcion para abrir formulario nuevo usuario
 
-    /*Funcion para parar owncloud*/
+    /*Funcion para la capacidad de HDD owncloud*/
     $( "#botonCapacidadOwncloud" ).click(function() {            
-            //falta por rellenar con funcion
-    }); //Fin de funcion para parar owncloud
+      $.ajax({ 
+                    type: "GET",
+                    url: "Servidor",
+                    data: 'op=9', //La operación 9 ejecuta script para conocer la capacidad del HDD
+                    success: function(msge) {
+                        $("#resultado").html(msge);
+                    }
+                }); 
+    }); //Fin de funcion para la capacidad de HDD owncloud
         
     /*Al hacer clic en el boton (botonRealizarBackup) empieza una barra de proceso para ver cuando termina la copia de seguridad*/
     $("#botonRealizarBackup").click(function() {
