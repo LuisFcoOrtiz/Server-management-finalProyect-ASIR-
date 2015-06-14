@@ -72,7 +72,7 @@ $(document).ready( function() {
                   }
                 }	 		   
 
-                setTimeout( progress, 4000 ); //cantidad de tiempo que tardara la barra de procesar
+                setTimeout( progress, 7000 ); //cantidad de tiempo que tardara la barra de procesar
             });
     }); //Fin de la funcion al apretar el boton (botonRealizarBackup)
 

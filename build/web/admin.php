@@ -1,4 +1,3 @@
-
 	<?php 	
 	    session_start();
 	    $tipo=$_SESSION['tipo'];
@@ -6,7 +5,6 @@
 	        header('Location: index.html');
 	    } else { 
 	?>
-
 
 <!DOCTYPE html>
 <!--
