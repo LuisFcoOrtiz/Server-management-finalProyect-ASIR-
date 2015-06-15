@@ -52,15 +52,18 @@ and open the template in the editor.
 					  </ul>
 					  <div id="tabs-1">
 					    <p>
-					    	Este es el panel de informacion	
+					    	Bienvenido a la aplicación de gestión del servidor Owncloud, en esta aplicación web puedes gestionar las principales caracteristicas.
 					    </p>
+					    <p>Esta aplicación esta realizada para el proyecto final de ASIR, puedes visionar la aplicación desde cualquier dispositivo asi que solo queda probarla! </p>					    	
 					  </div>
 					  <div id="tabs-2">
 					    <p>
-					    	Este es el panel de servicios
+					    	En el apartado de admin puedes gestionar los estados de los servicios Owncloud y Thinclient (Parar, iniciar, etc) puedes también activar el boton de alerta para enviar un whatsapp al administrador del sistema.
 					    </p>
+					    <p>En el apartado de Owncloud puedes gestionar los usuarios que estan activos para utilizar el servicio de Owncloud y ver sus ultimos movimientos en ficheros (ficheros borrados, creados, etc) ver logs, realizar backup, etc</p>
 					  </div>
 					  <div id="tabs-3">
+					  	<p>En esta seccion puedes ejecutar operaciones manualmente introduciendo el numero de operacion (para pruebas)</p>
 					    <p>
 					    	<!-- Para insertar codigos de operacion -->
 				    		Insertar codigo de operacion:
@@ -69,23 +72,7 @@ and open the template in the editor.
 					    </p>
 					    
 					  </div>
-					</div> <!-- fin de tablas de informacion admin -->					
-
-			        <!--Cuadro que aparece al pulsar (botonInfoUsuario) para ver el usuario activo-->
-			            <div id="usuarioActual" class="ui-widget-content ui-corner-all">
-			            	<table class="table">
-								<tr class="active">
-									<td></td>
-									<td>USUARIO</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>Iliberis</td>
-									<td>administrador</td>
-									<td><a href="logout.php"><IMG id="logoutUsuario" SRC="images/logout.png"></a></td>
-								</tr>
-			            	</table>
-			            </div><!--fin de div ver usuario activo -->					
+					</div> <!-- fin de tablas de informacion admin -->								        					
 
 	            </div> <!-- fin de columnas izquierda -->
 				
@@ -101,11 +88,11 @@ and open the template in the editor.
 			           		<td></td>	
 			            </tr>
 			            <tr class="active"> 
-			            	<td></td>	
-			            	<td>Usuario</td>
+			            	<td>Alerta</td>	
+			            	<td>Administrador</td>
 			            	<td></td>
 			            	<!--boton para ver el usuario-->			            	
-			           		<td><button id="botonInfoUsuario" class="glyphicon glyphicon-user"></button></td>
+			           		<td><button id="botonEnviarWhatsapp" class="glyphicon glyphicon-warning-sign"></button></td>
 			           		<td></td>	
 			            </tr>
 						<tr class="info">

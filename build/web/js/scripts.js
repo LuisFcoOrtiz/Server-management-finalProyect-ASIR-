@@ -18,27 +18,7 @@ $(document).ready( function() {
         });
     }
     /*cada 3 segundos se ejecuta la funcion estado que esta al final del script*/
-    setInterval(estado, 3000);    
-
-    /*Funcion para ver el usuario actual*/
-    $(function() {
-        $( "#usuarioActual" ).dialog({
-          autoOpen: false,
-          show: {
-            effect: "fold", /*Forma de abrirse*/
-            duration: 100
-          },
-          hide: {
-            effect: "clip", /*Forma de cerrarse*/
-            duration: 100
-          }
-        });
-     
-        $( "#botonInfoUsuario" ).click(function() {            
-            $( "#usuarioActual" ).dialog( "open" );
-        });
-        
-    });//fin de ver el usuario actual conectado
+    setInterval(estado, 4500);    
 
     /*menu con pestañas en la pagina de administracion */
     $(function() {
@@ -46,7 +26,19 @@ $(document).ready( function() {
     });
     
     //***FUNCIONES PARA LOS BOTONES DEL PANEL DE ADMINISTRACION***//
-    
+
+    /*Funcion para enviar whatsapp al administrador*/
+    $( "#botonEnviarWhatsapp" ).click(function() {            
+            $.ajax({ 
+                    type: "GET",
+                    url: "Servidor",
+                    data: 'op=10', //La operación 3 ejecuta un script para hacer un backup de owncloud
+                    success: function(msge) {
+                        $("#resultado").html(msge);
+                    }
+                });
+    }); //Fin de funcion para enviar whatsapp al administrador
+
     //BOTONES OWNCLOUD
     /*Funcion para reiniciar owncloud*/
     $( "#botonReiniciarOwncloud" ).click(function() {            

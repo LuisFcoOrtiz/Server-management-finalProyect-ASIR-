@@ -12,8 +12,7 @@
 	            </a> 
 	            <ul class='nav nav-tabs nav-justified'> 
 	                    <li class='active'><a href='admin.php'>Admin</a></li> 
-	                    <li><a href='owncloud.php''>Owncloud</a></li> 
-	                    <li><a href='#''>ThinClient</a></li>	                    	                   	                    	                    
+	                    <li><a href='owncloud.php''>Owncloud</a></li> 	                    
 	                    <li><a id='usuario' href='logout.php'>Exit</a></li>
 	            </ul> 
         	</div>";
