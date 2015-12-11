@@ -46,7 +46,7 @@ public class Operacion1 extends Operacion{
             BufferedReader bufferThin = new BufferedReader (new InputStreamReader(processThin.getInputStream()));
             String lineaThin;
             //CORREO ELECTRONICO PARA AVISAR AL ADMINISTRADOR
-            String clave = "saludosalsevi"; //Contraseña de gmail para enviar correo 
+            String clave = "*********"; //Contraseña de gmail para enviar correo 
             Email email = new Email("levantateomr@gmail.com",clave,"luis.fco.om@gmail.com","ALERTA Servicio no activo","El servidor cayo de forma inesperada, requiere de supervision inmediata del administrador");
             //Email e = new Email("levantateomr@gmail.com",clave,"C:\\uno.jpg","adjunto.jpg","sanlegas@yopmail.com","Adjunto","Prueba del tutorial para mandar un email");
             
