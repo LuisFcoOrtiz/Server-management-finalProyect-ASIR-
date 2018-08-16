@@ -4,7 +4,7 @@ proyecto final para el curso de administracion de sistemas informaticos en redSe
 Utiliza Java servlet, Java, PHP, bootstrap, html5, CSS, Jquery UI, etc
 En la siguiente imagen se puede ver un esquema de como funciona todo:
 ![captura](https://cloud.githubusercontent.com/assets/8844134/17966739/67758104-6ac3-11e6-8443-5bb54e799ef7.JPG)
-
+ 
 ####La aplicación es capaz de:
 
 * Mostrar información del estado de los servicios
